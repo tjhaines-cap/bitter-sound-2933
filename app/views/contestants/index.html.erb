@@ -1,4 +1,6 @@
 <% @contestants.each do |contestant| %>
-    <p><%= contestant.name %></p>
-    <p>Projects: <%= contestant.list_projects.join(", ") %></p>
+    <div id="contestant-<%= contestant.id %>">
+        <p><%= contestant.name %></p>
+        <p>Projects: <%= contestant.list_projects.join(", ") %></p>
+    </div>
 <% end %>
