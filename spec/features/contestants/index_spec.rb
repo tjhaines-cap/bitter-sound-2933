@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe 'contestants index page', type: :feature do
 
-    it 'displays list of all contestant names' do
+    it 'displays list of all contestant names and projects' do
         recycled_material_challenge = Challenge.create(theme: "Recycled Material", project_budget: 1000)
         furniture_challenge = Challenge.create(theme: "Apartment Furnishings", project_budget: 1000)
 
