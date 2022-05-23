@@ -42,7 +42,7 @@ RSpec.describe Project, type: :model do
       expect(lit_fit.count_contestants).to eq(0)
     end
 
-    it 'returns the ages of contestants on project' do
+    it 'returns the average age of contestants on a project' do
       recycled_material_challenge = Challenge.create(theme: "Recycled Material", project_budget: 1000)
       furniture_challenge = Challenge.create(theme: "Apartment Furnishings", project_budget: 1000)
 
@@ -64,9 +64,9 @@ RSpec.describe Project, type: :model do
       ContestantProject.create(contestant_id: erin.id, project_id: boardfit.id)
       ContestantProject.create(contestant_id: gretchen.id, project_id: boardfit.id)
 
-      expect(news_chic.contestants_years_of_experiences).to eq([13, 12])
-      expect(upholstery_tux.contestants_years_of_experiences).to eq([12, 8])
-      expect(boardfit.contestants_years_of_experiences).to eq([12, 8, 15])
+      expect(news_chic.average_years_of_experiences).to eq(12.5)
+      expect(upholstery_tux.average_years_of_experiences).to eq(10.0)
+      expect(boardfit.average_years_of_experiences).to eq(11.67)
     end
   end
 end

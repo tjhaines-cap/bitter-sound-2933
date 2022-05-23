@@ -8,7 +8,7 @@ class Project <ApplicationRecord
     contestants.count
   end
 
-  def contestants_years_of_experiences
-    contestants.pluck(:years_of_experience)
+  def average_years_of_experiences
+    contestants.average(:years_of_experience).round(2)
   end
 end

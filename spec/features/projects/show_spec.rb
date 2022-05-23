@@ -47,10 +47,13 @@ RSpec.describe 'projects show page', type: :feature do
 
         visit "/projects/#{news_chic.id}"
         expect(page).to have_content("Number of Contestants: 2")
+
         visit "/projects/#{upholstery_tux.id}"
         expect(page).to have_content("Number of Contestants: 1")
+
         visit "/projects/#{boardfit.id}"
         expect(page).to have_content("Number of Contestants: 2")
+
         visit "/projects/#{lit_fit.id}"
         expect(page).to have_content("Number of Contestants: 0")
     end
@@ -79,8 +82,10 @@ RSpec.describe 'projects show page', type: :feature do
 
         visit "/projects/#{news_chic.id}"
         expect(page).to have_content("Average Contestant Experiences: 12.5 years")
+
         visit "/projects/#{upholstery_tux.id}"
         expect(page).to have_content("Average Contestant Experiences: 10.0 years")
+        
         visit "/projects/#{boardfit.id}"
         expect(page).to have_content("Average Contestant Experiences: 11.67 years")
     end
