@@ -33,7 +33,6 @@ RSpec.describe 'projects show page', type: :feature do
         boardfit = recycled_material_challenge.projects.create(name: "Boardfit", material: "Cardboard Boxes")
         lit_fit = furniture_challenge.projects.create(name: "Litfit", material: "Lamp")
 
-
         jay = Contestant.create(name: "Jay McCarroll", age: 40, hometown: "LA", years_of_experience: 13)
         gretchen = Contestant.create(name: "Gretchen Jones", age: 36, hometown: "NYC", years_of_experience: 12)
         kentaro = Contestant.create(name: "Kentaro Kameyama", age: 30, hometown: "Boston", years_of_experience: 8)
