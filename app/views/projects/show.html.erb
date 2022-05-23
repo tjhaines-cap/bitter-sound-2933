@@ -3,7 +3,7 @@
 <p>Challenge Theme: <%= @project.challenge.theme%></p>
 <p>Number of Contestants: <%= @project.count_contestants %></p>
 <p>Average Contestant Experiences: <%=  @project.count_contestants > 0 ? @project.average_years_of_experience : 0 %> years</p>
-<%= form_with url: "/projects/#{@project.id}", method: :patch, local: true do |form| %>
+<%= form_with url: "/projects/#{@project.id}/contestants", method: :post, local: true do |form| %>
     <%= form.label :contestant_id %>
     <%= form.text_field :contestant_id %>
 
