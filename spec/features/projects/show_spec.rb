@@ -121,9 +121,19 @@ RSpec.describe 'projects show page', type: :feature do
         expect(page).to have_content("Number of Contestants: 1")
 
         visit "/contestants"
-        expect(page).to have_content("Jay McCarroll")
-        expect(page).to have_content("Projects: Upholstery Tuxedo, Boardfit")
-        expect(page).to have_content("Gretchen Jones")
-        expect(page).to have_content("Projects: News Chic")
+
+        within("#contestant-#{jay.id}") do
+            expect(page).to have_content("Jay McCarroll")
+            expect(page).to have_content("Projects: Upholstery Tuxedo, Boardfit")
+            expect(page).to_not have_content("Gretchen Jones")
+            expect(page).to_not have_content("Projects: News Chic")
+        end
+
+        within("#contestant-#{gretchen.id}") do
+            expect(page).to have_content("Gretchen Jones")
+            expect(page).to have_content("Projects: News Chic")
+            expect(page).to_not have_content("Jay McCarroll")
+            expect(page).to_not have_content("Projects: Upholstery Tuxedo, Boardfit")
+        end
     end
 end
