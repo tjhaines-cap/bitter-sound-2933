@@ -85,9 +85,12 @@ RSpec.describe 'projects show page', type: :feature do
 
         visit "/projects/#{upholstery_tux.id}"
         expect(page).to have_content("Average Contestant Experiences: 10.0 years")
-        
+
         visit "/projects/#{boardfit.id}"
         expect(page).to have_content("Average Contestant Experiences: 11.67 years")
+        
+        visit "/projects/#{lit_fit.id}"
+        expect(page).to have_content("Average Contestant Experiences: 0 years")
     end
 
     it 'has a form to enter contestant id to add to project' do

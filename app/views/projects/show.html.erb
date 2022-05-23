@@ -2,7 +2,7 @@
 <p>Material: <%= @project.material %></p>
 <p>Challenge Theme: <%= @project.challenge.theme%></p>
 <p>Number of Contestants: <%= @project.count_contestants %></p>
-<p>Average Contestant Experiences: <%= (@project.contestants_years_of_experiences.sum.to_f / @project.contestants_years_of_experiences.count).round(2) %> years</p>
+<p>Average Contestant Experiences: <%=  @project.count_contestants > 0 ? @project.average_years_of_experience : 0 %> years</p>
 <%= form_with url: "/projects/#{@project.id}", method: :patch, local: true do |form| %>
     <%= form.label :contestant_id %>
     <%= form.text_field :contestant_id %>
